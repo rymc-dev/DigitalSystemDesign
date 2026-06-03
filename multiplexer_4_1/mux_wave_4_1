@@ -1,0 +1,127 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 10;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x6551c1107b00 .scope module, "multiplexer_4_1_tb" "multiplexer_4_1_tb" 2 3;
+ .timescale -9 -10;
+v0x6551c1122ef0_0 .var "a", 0 0;
+v0x6551c1122fb0_0 .var "b", 0 0;
+v0x6551c1123080_0 .var "c", 0 0;
+v0x6551c1123180_0 .var "d", 0 0;
+v0x6551c1123250_0 .var "sel", 1 0;
+v0x6551c11232f0_0 .net "y", 0 0, L_0x6551c11244a0;  1 drivers
+S_0x6551c1107c90 .scope module, "u0_DUT" "multiplexer_4_1" 2 9, 3 1 0, S_0x6551c1107b00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "c";
+    .port_info 3 /INPUT 1 "d";
+    .port_info 4 /INPUT 2 "sel";
+    .port_info 5 /OUTPUT 1 "y";
+L_0x6551c11234e0 .functor NOT 1, L_0x6551c11233c0, C4<0>, C4<0>, C4<0>;
+L_0x6551c1123640 .functor NOT 1, L_0x6551c11235a0, C4<0>, C4<0>, C4<0>;
+L_0x6551c1123730 .functor AND 1, L_0x6551c11234e0, L_0x6551c1123640, C4<1>, C4<1>;
+L_0x6551c1123840 .functor AND 1, L_0x6551c1123730, v0x6551c1122ef0_0, C4<1>, C4<1>;
+L_0x6551c1123a20 .functor NOT 1, L_0x6551c1123980, C4<0>, C4<0>, C4<0>;
+L_0x6551c1123b60 .functor AND 1, L_0x6551c1123a20, L_0x6551c1123a90, C4<1>, C4<1>;
+L_0x6551c1123cb0 .functor AND 1, L_0x6551c1123b60, v0x6551c1122fb0_0, C4<1>, C4<1>;
+L_0x6551c1123dc0 .functor OR 1, L_0x6551c1123840, L_0x6551c1123cb0, C4<0>, C4<0>;
+L_0x6551c11240a0 .functor NOT 1, L_0x6551c1123fc0, C4<0>, C4<0>, C4<0>;
+L_0x6551c1124160 .functor AND 1, L_0x6551c1123f20, L_0x6551c11240a0, C4<1>, C4<1>;
+L_0x6551c11242d0 .functor AND 1, L_0x6551c1124160, v0x6551c1123080_0, C4<1>, C4<1>;
+L_0x6551c1124390 .functor OR 1, L_0x6551c1123dc0, L_0x6551c11242d0, C4<0>, C4<0>;
+L_0x6551c11246a0 .functor AND 1, L_0x6551c1124510, L_0x6551c11245b0, C4<1>, C4<1>;
+L_0x6551c11247b0 .functor AND 1, L_0x6551c11246a0, v0x6551c1123180_0, C4<1>, C4<1>;
+L_0x6551c11244a0 .functor OR 1, L_0x6551c1124390, L_0x6551c11247b0, C4<0>, C4<0>;
+v0x6551c10cd490_0 .net *"_ivl_1", 0 0, L_0x6551c11233c0;  1 drivers
+v0x6551c1121700_0 .net *"_ivl_10", 0 0, L_0x6551c1123840;  1 drivers
+v0x6551c11217e0_0 .net *"_ivl_13", 0 0, L_0x6551c1123980;  1 drivers
+v0x6551c11218a0_0 .net *"_ivl_14", 0 0, L_0x6551c1123a20;  1 drivers
+v0x6551c1121980_0 .net *"_ivl_17", 0 0, L_0x6551c1123a90;  1 drivers
+v0x6551c1121ab0_0 .net *"_ivl_18", 0 0, L_0x6551c1123b60;  1 drivers
+v0x6551c1121b90_0 .net *"_ivl_2", 0 0, L_0x6551c11234e0;  1 drivers
+v0x6551c1121c70_0 .net *"_ivl_20", 0 0, L_0x6551c1123cb0;  1 drivers
+v0x6551c1121d50_0 .net *"_ivl_22", 0 0, L_0x6551c1123dc0;  1 drivers
+v0x6551c1121e30_0 .net *"_ivl_25", 0 0, L_0x6551c1123f20;  1 drivers
+v0x6551c1121f10_0 .net *"_ivl_27", 0 0, L_0x6551c1123fc0;  1 drivers
+v0x6551c1121ff0_0 .net *"_ivl_28", 0 0, L_0x6551c11240a0;  1 drivers
+v0x6551c11220d0_0 .net *"_ivl_30", 0 0, L_0x6551c1124160;  1 drivers
+v0x6551c11221b0_0 .net *"_ivl_32", 0 0, L_0x6551c11242d0;  1 drivers
+v0x6551c1122290_0 .net *"_ivl_34", 0 0, L_0x6551c1124390;  1 drivers
+v0x6551c1122370_0 .net *"_ivl_37", 0 0, L_0x6551c1124510;  1 drivers
+v0x6551c1122450_0 .net *"_ivl_39", 0 0, L_0x6551c11245b0;  1 drivers
+v0x6551c1122530_0 .net *"_ivl_40", 0 0, L_0x6551c11246a0;  1 drivers
+v0x6551c1122610_0 .net *"_ivl_42", 0 0, L_0x6551c11247b0;  1 drivers
+v0x6551c11226f0_0 .net *"_ivl_5", 0 0, L_0x6551c11235a0;  1 drivers
+v0x6551c11227d0_0 .net *"_ivl_6", 0 0, L_0x6551c1123640;  1 drivers
+v0x6551c11228b0_0 .net *"_ivl_8", 0 0, L_0x6551c1123730;  1 drivers
+v0x6551c1122990_0 .net "a", 0 0, v0x6551c1122ef0_0;  1 drivers
+v0x6551c1122a50_0 .net "b", 0 0, v0x6551c1122fb0_0;  1 drivers
+v0x6551c1122b10_0 .net "c", 0 0, v0x6551c1123080_0;  1 drivers
+v0x6551c1122bd0_0 .net "d", 0 0, v0x6551c1123180_0;  1 drivers
+v0x6551c1122c90_0 .net "sel", 1 0, v0x6551c1123250_0;  1 drivers
+v0x6551c1122d70_0 .net "y", 0 0, L_0x6551c11244a0;  alias, 1 drivers
+L_0x6551c11233c0 .part v0x6551c1123250_0, 1, 1;
+L_0x6551c11235a0 .part v0x6551c1123250_0, 0, 1;
+L_0x6551c1123980 .part v0x6551c1123250_0, 1, 1;
+L_0x6551c1123a90 .part v0x6551c1123250_0, 0, 1;
+L_0x6551c1123f20 .part v0x6551c1123250_0, 1, 1;
+L_0x6551c1123fc0 .part v0x6551c1123250_0, 0, 1;
+L_0x6551c1124510 .part v0x6551c1123250_0, 1, 1;
+L_0x6551c11245b0 .part v0x6551c1123250_0, 1, 1;
+    .scope S_0x6551c1107b00;
+T_0 ;
+    %vpi_call 2 20 "$dumpfile", "test_4_1_mux.vcd" {0 0 0};
+    %vpi_call 2 21 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x6551c1107b00 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6551c1122ef0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6551c1122fb0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6551c1123080_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6551c1123180_0, 0, 1;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v0x6551c1123250_0, 0, 2;
+    %delay 50, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x6551c1122ef0_0, 0, 1;
+    %delay 50, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6551c1122ef0_0, 0, 1;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v0x6551c1123250_0, 0, 2;
+    %delay 50, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x6551c1122fb0_0, 0, 1;
+    %delay 50, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6551c1122fb0_0, 0, 1;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v0x6551c1123250_0, 0, 2;
+    %delay 50, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x6551c1123080_0, 0, 1;
+    %delay 50, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6551c1123080_0, 0, 1;
+    %pushi/vec4 3, 0, 2;
+    %store/vec4 v0x6551c1123250_0, 0, 2;
+    %delay 50, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x6551c1123080_0, 0, 1;
+    %delay 50, 0;
+    %vpi_call 2 33 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "multiplexer_4_1_tb.v";
+    "multiplexer_4_1.v";
